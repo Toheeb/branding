@@ -1,0 +1,377 @@
+
+/***********************************
+************************************
+  S T R U C T U R E
+************************************
+  - Page
+  - Title
+  - Subtitle
+  - Subcribe Form
+************************************
+************************************/
+
+/***********************************
+- Page
+************************************/
+.page {
+  position: relative;
+
+  box-sizing: border-box;
+  padding: 1.8rem;
+  max-width: 540px;
+  /*
+    * Specifying margin may violate the open/close principle but this block has no parent!
+    *
+    */
+  margin: 0 auto;
+
+  /* 
+    * Group all contents as one and center them to .page
+    *
+    * Vertically with justify-content
+    *
+    */
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  background: 
+    radial-gradient(#611A26 1px, transparent 2px),
+    radial-gradient(#611A26 1px, transparent 2px),
+    #1a0013;
+
+  background-size: 50px 50px;
+  background-position: 24px 24px, 0px 0px;
+  color: white;
+}
+
+/***********************************
+- Title 
+************************************/
+.title {
+  padding: 1.5rem 1.5rem 2rem;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+
+  color: white;
+  background: #1a0013;
+}
+
+.title__author {
+  font: 1rem/1.5 'Trebuchet MS', sans-serif;
+  opacity: 0.7;
+}
+
+.title__subject {
+  font: 2.5rem/1 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.15rem;
+  opacity: 0.8;
+}
+
+.title__predicate {
+  font: 1.25rem/1.5 'Brush Script MT', serif;
+  letter-spacing: 0.1rem;
+  opacity: 0.8;
+}
+
+/* 
+  * Specify border-color to inherit the base color in a themed environment
+  * 
+  * NB: Specify separately to avoid error
+  *
+  * Use left border for the left of the text and right for the right of the text...
+  * so its counter space (provided through the padding property) will be towards the text... 
+  * if parent's flex property was not supported
+  * 
+  */
+.title:after,
+.title:before {
+  content: "";
+  opacity: 0.8;
+  transform: rotate(45deg);
+  border-color: inherit;
+} 
+
+.title:before {
+  border-left: 1px solid;
+  border-top: 1px solid;
+  padding: 0.25rem;
+
+  width: 0.5rem;
+  height: 0.5rem;
+
+  margin: 0 auto 0.5rem;
+}
+
+.title:after {
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+
+  padding: 0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  margin: 0 auto;
+}
+
+
+/***********************************
+- Subtitle 
+************************************/
+.subtitle {
+  font: normal 1.125rem/1.333 'Trebuchet MS', sans-serif;
+  padding: 0.875rem 1.35rem 1rem;
+  text-align: center;
+  letter-spacing: 0.02rem;
+
+  color: white;
+  background: #24001b;
+}
+
+
+/***********************************
+- Subcribe Form
+
+NB:: May violate BEM principles in order not to tamper with the provided content structure
+************************************/
+
+.sib-form {
+  width: 100%;
+  padding: 1.5rem 1.35rem;
+  box-sizing: border-box;
+
+  background: #24001b;
+  color: white;
+}
+
+.sib-form-message-panel {
+  display: none;
+  box-sizing: border-box;
+  
+  padding: 0.875rem 1.35rem 1rem;
+  font: 1rem/1.5 'Trebuchet MS', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.sib-form-message-panel--active {
+  display: block;
+}
+
+#error-message {
+  background:#ffebee;
+  color: #8a0017;
+}
+#success-message {
+  background:hsl(155, 100%, 96%);
+  color: hsl(155, 100%, 27%);
+}
+
+.sib-notification__icon {
+  line-height: 1;
+  font-weight: bold;
+  padding-right: 1rem;
+}
+
+
+.input {
+  outline: 0;
+
+  /* Specify font-size while typing */
+  font: 1rem/3 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.02rem;
+  
+  box-sizing: border-box;
+  padding: 0 1rem;
+  width: 100%;
+  
+  background: #1f0017;
+  color: white;
+
+  border: 2px solid #800060;
+  border-image: linear-gradient(136deg, #800060, hsl(350, 100%, 27%), #800060) 1;
+
+  /* Using margin to avoid have custom class name in a custom code */
+  margin-bottom: 0.25rem;
+}
+
+.input::placeholder {
+  color: #b9acb6;
+  padding-left: 0.2rem;
+  
+  /* Specify font-size before user input */
+  font: 0.875rem/1 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.02rem;
+}
+
+.input:focus {
+  border-width: 4px;
+}
+
+.sib-form-block__button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  padding: 1rem 1.5rem;
+  background: linear-gradient(136deg, #8a0017, #800060);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  font: 0.875rem/1.5 'Trebuchet MS', sans-serif;
+
+  display: block;
+  margin: 1rem auto 0;
+}
+
+
+.progress-indicator__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  fill: white;
+}
+
+@keyframes indicator-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.sib-form .progress-indicator__icon {
+  -webkit-animation: indicator-spin 1.3s cubic-bezier(.46,.35,.39,.85) infinite;
+  animation: indicator-spin 1.3s cubic-bezier(.46,.35,.39,.85) infinite;
+}
+
+.sib-hide-loader-icon {
+  display: none;
+}
+
+.input--hidden {
+  display: none !important;
+}
+
+
+/***********************************
+************************************
+  L A Y O U T
+************************************
+  - Page Title
+  - Page Subtitle
+  - Page Subcribe Form
+************************************
+************************************/
+
+.page__title {
+  margin: 0 auto 1rem;
+
+  background: transparent;
+}
+
+.page__subtitle {
+  margin: 0 auto 0.625rem;
+
+  opacity: 0.8;
+}
+
+.page__sib-form {
+  margin: 0 auto 3rem;
+}
+
+.page__button {
+  display: block;
+  margin: auto;
+}
+
+
+
+/***********************************
+************************************
+  C O R N E R  D E C O R A T I V E S
+************************************
+  - Flare Box Top Left
+  - Flare Box Top Right
+  - Flare Box Bottom Left
+  - Flare Box Bottom Right
+************************************
+************************************/
+.flare-box {
+  width: 32px;
+  height: 32px;
+  color: hsl(350, 100%, 90%);
+  border: 1px solid;
+  opacity: 0.3;
+}
+
+.flare-box::after {
+  content: "";
+
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 7px;
+  border: 1px solid;
+}
+
+.page__flare-box_tl {
+  margin: 0;
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+.page__flare-box_tl,
+.page__flare-box_tl::after {
+  border-bottom: 0;
+  border-right: 0;
+}
+
+.page__flare-box_tr {
+  margin: 0;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+
+.page__flare-box_tr,
+.page__flare-box_tr::after {
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.page__flare-box_br {
+  margin: 0;
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+}
+
+.page__flare-box_br,
+.page__flare-box_br::after {
+  border-top: 0;
+  border-left: 0;
+}
+
+.page__flare-box_bl {
+  margin: 0;
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+}
+
+.page__flare-box_bl,
+.page__flare-box_bl::after {
+  border-top: 0;
+  border-right: 0;
+}
