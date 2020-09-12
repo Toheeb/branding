@@ -46,6 +46,8 @@
   background-size: 50px 50px;
   background-position: 24px 24px, 0px 0px;
   color: white;
+
+  font: 1rem/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /***********************************
@@ -65,7 +67,9 @@
 }
 
 .title__author {
-  font: 1rem/1.5 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
   opacity: 0.7;
 }
 
@@ -77,7 +81,7 @@
 }
 
 .title__predicate {
-  font: 1.25rem/1.5 'Brush Script MT', serif;
+  font: 1.25rem/1.5 'Brush Script MT', cursive;
   letter-spacing: 0.1rem;
   opacity: 0.8;
 }
@@ -127,7 +131,6 @@
 - Subtitle 
 ************************************/
 .subtitle {
-  font: normal 1.125rem/1.333 'Trebuchet MS', sans-serif;
   padding: 0.875rem 1.35rem 1rem;
   text-align: center;
   letter-spacing: 0.02rem;
@@ -157,7 +160,6 @@ NB:: May violate BEM principles in order not to tamper with the provided content
   box-sizing: border-box;
   
   padding: 0.875rem 1.35rem 1rem;
-  font: 1rem/1.5 'Trebuchet MS', sans-serif;
   margin-bottom: 1rem;
 }
 
@@ -184,12 +186,11 @@ NB:: May violate BEM principles in order not to tamper with the provided content
 .input {
   outline: 0;
 
-  /* Specify font-size while typing */
-  font: 1rem/3 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
   letter-spacing: 0.02rem;
   
   box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 0.75rem 1rem;
   width: 100%;
   
   background: #1f0017;
@@ -200,14 +201,15 @@ NB:: May violate BEM principles in order not to tamper with the provided content
 
   /* Using margin to avoid have custom class name in a custom code */
   margin-bottom: 0.25rem;
+
+  font-family: inherit;
 }
 
 .input::placeholder {
   color: #b9acb6;
   padding-left: 0.2rem;
   
-  /* Specify font-size before user input */
-  font: 0.875rem/1 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
   letter-spacing: 0.02rem;
 }
 
@@ -223,9 +225,9 @@ NB:: May violate BEM principles in order not to tamper with the provided content
   padding: 1rem 1.5rem;
   background: linear-gradient(136deg, #8a0017, #800060);
   color: white;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.12rem;
-  font: 0.875rem/1.5 'Trebuchet MS', sans-serif;
 
   display: block;
   margin: 1rem auto 0;
